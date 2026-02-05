@@ -1,63 +1,109 @@
- const Footer = () => {
-   return (
-     <footer className="border-t-2 border-border py-12">
-       <div className="container mx-auto px-4">
-         <div className="grid md:grid-cols-4 gap-8 mb-12">
-           <div className="md:col-span-2">
-             <a href="#" className="text-2xl font-bold tracking-tight mb-4 inline-block">
-               Cloud<span className="text-muted-foreground">Garage</span>
-             </a>
-             <p className="text-muted-foreground max-w-md leading-relaxed">
-               Microsoft Partner for 10+ years. Pioneering in Data and AI Solutions 
-               powered by Microsoft Fabric and Azure AI.
-             </p>
-           </div>
-           <div>
-             <h4 className="font-bold uppercase tracking-wide mb-4">Quick Links</h4>
-             <ul className="space-y-2">
-               <li>
-                 <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-                   About Us
-                 </a>
-               </li>
-               <li>
-                 <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
-                   Services
-                 </a>
-               </li>
-               <li>
-                 <a href="#use-cases" className="text-muted-foreground hover:text-foreground transition-colors">
-                   Use Cases
-                 </a>
-               </li>
-               <li>
-                 <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                   Contact
-                 </a>
-               </li>
-             </ul>
-           </div>
-           <div>
-             <h4 className="font-bold uppercase tracking-wide mb-4">Technologies</h4>
-             <ul className="space-y-2">
-               <li className="text-muted-foreground">Microsoft Fabric</li>
-               <li className="text-muted-foreground">Azure AI</li>
-               <li className="text-muted-foreground">Azure OpenAI</li>
-               <li className="text-muted-foreground">Azure IoT</li>
-             </ul>
-           </div>
-         </div>
-         <div className="border-t-2 border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-           <p className="text-sm text-muted-foreground">
-             © 2026 CloudGarage. All rights reserved.
-           </p>
-           <p className="text-sm text-muted-foreground">
-             Microsoft Partner Network
-           </p>
-         </div>
-       </div>
-     </footer>
-   );
- };
- 
- export default Footer;
+import { Cloud, Linkedin, Twitter, Mail } from "lucide-react";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <footer className="bg-foreground text-background py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
+                <Cloud className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <span className="text-xl font-bold">CloudGarage</span>
+            </div>
+            <p className="text-background/70 mb-6 max-w-md leading-relaxed">
+              Your trusted Microsoft partner for Data and AI solutions. 
+              We help businesses achieve measurable ROI through technology-powered solutions.
+            </p>
+            
+            {/* Microsoft Partner Badge */}
+            <div className="inline-flex items-center gap-2 border border-background/20 px-4 py-2 rounded-lg bg-background/5">
+              <div className="w-6 h-6 bg-[#00A4EF] rounded flex items-center justify-center">
+                <span className="text-white text-xs font-bold">M</span>
+              </div>
+              <div className="text-sm">
+                <p className="font-semibold text-background/90">Microsoft Partner</p>
+                <p className="text-background/50 text-xs">10+ Years Experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-6 text-lg">Quick Links</h4>
+            <ul className="space-y-3">
+              {[
+                { label: 'About Us', id: 'about' },
+                { label: 'Services', id: 'services' },
+                { label: 'Use Cases', id: 'use-cases' },
+                { label: 'Contact', id: 'contact' },
+              ].map((link) => (
+                <li key={link.id}>
+                  <button
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-background/70 hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-6 text-lg">Connect</h4>
+            <div className="flex gap-3 mb-6">
+              <a
+                href="#"
+                className="w-10 h-10 border border-background/20 flex items-center justify-center rounded-lg hover:bg-primary hover:border-primary transition-colors group"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-background/70 group-hover:text-primary-foreground" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 border border-background/20 flex items-center justify-center rounded-lg hover:bg-primary hover:border-primary transition-colors group"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5 text-background/70 group-hover:text-primary-foreground" />
+              </a>
+              <a
+                href="mailto:nilay@cloudgarage.in"
+                className="w-10 h-10 border border-background/20 flex items-center justify-center rounded-lg hover:bg-primary hover:border-primary transition-colors group"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5 text-background/70 group-hover:text-primary-foreground" />
+              </a>
+            </div>
+            
+            <div className="text-sm text-background/50">
+              <p>nilay@cloudgarage.in</p>
+              <p>+91 9971144155</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-background/50 text-sm">
+            © {currentYear} CloudGarage. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-background/50">
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
