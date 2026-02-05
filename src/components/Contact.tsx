@@ -27,7 +27,7 @@
                  </div>
                  <div>
                    <p className="font-bold">Email</p>
-                   <p className="text-muted-foreground">hello@cloudgarage.com</p>
+                    <p className="text-muted-foreground">nilay@cloudgarage.in</p>
                  </div>
                </div>
                <div className="flex items-start gap-4">
@@ -36,7 +36,7 @@
                  </div>
                  <div>
                    <p className="font-bold">Phone</p>
-                   <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+91 9971144155</p>
                  </div>
                </div>
                <div className="flex items-start gap-4">
