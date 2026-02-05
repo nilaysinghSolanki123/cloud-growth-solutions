@@ -45,7 +45,7 @@
                  </div>
                  <div>
                    <p className="font-bold">Location</p>
-                   <p className="text-muted-foreground">Microsoft Partner Network</p>
+                   <p className="text-muted-foreground">WeWork Zenia, Hiranandani Business Park, Off Ghodbunder Road, Thane, Mumbai 400607</p>
                  </div>
                </div>
              </div>
