@@ -77,7 +77,7 @@ const Footer = () => {
                 <Twitter className="w-5 h-5 text-background/70 group-hover:text-primary-foreground" />
               </a>
               <a
-                href="mailto:nilay@cloudgarage.in"
+                href="mailto:ceo@cloudgarage.in"
                 className="w-10 h-10 border border-background/20 flex items-center justify-center rounded-lg hover:bg-primary hover:border-primary transition-colors group"
                 aria-label="Email"
               >
@@ -86,8 +86,7 @@ const Footer = () => {
             </div>
             
             <div className="text-sm text-background/50">
-              <p>nilay@cloudgarage.in</p>
-              <p>+91 9971144155</p>
+              <p>ceo@cloudgarage.in</p>
             </div>
           </div>
         </div>

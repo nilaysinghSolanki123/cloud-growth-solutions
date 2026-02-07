@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Send, ExternalLink } from "lucide-react";
+import { Mail, Send, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,7 +29,7 @@ const Contact = () => {
 
             <div className="space-y-4">
               <a 
-                href="mailto:nilay@cloudgarage.in" 
+                href="mailto:ceo@cloudgarage.in" 
                 className="flex items-center gap-4 group p-4 border-2 border-border/50 rounded-lg bg-card hover-lift transition-all"
               >
                 <div className="w-12 h-12 border-2 border-primary/30 flex items-center justify-center rounded-lg group-hover:bg-primary group-hover:border-primary transition-colors">
@@ -37,39 +37,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-bold group-hover:text-primary transition-colors">Email Us</p>
-                  <p className="text-muted-foreground">nilay@cloudgarage.in</p>
+                  <p className="text-muted-foreground">ceo@cloudgarage.in</p>
                 </div>
                 <ExternalLink className="w-4 h-4 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              
-              <a 
-                href="tel:+919971144155" 
-                className="flex items-center gap-4 group p-4 border-2 border-border/50 rounded-lg bg-card hover-lift transition-all"
-              >
-                <div className="w-12 h-12 border-2 border-primary/30 flex items-center justify-center rounded-lg group-hover:bg-primary group-hover:border-primary transition-colors">
-                  <Phone className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <div>
-                  <p className="font-bold group-hover:text-primary transition-colors">Call Us</p>
-                  <p className="text-muted-foreground">+91 9971144155</p>
-                </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-              
-              <a 
-                href="https://maps.google.com/?q=WeWork+Zenia+Hiranandani+Business+Park+Thane+Mumbai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 group p-4 border-2 border-border/50 rounded-lg bg-card hover-lift transition-all"
-              >
-                <div className="w-12 h-12 border-2 border-primary/30 flex items-center justify-center rounded-lg group-hover:bg-primary group-hover:border-primary transition-colors">
-                  <MapPin className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <div>
-                  <p className="font-bold group-hover:text-primary transition-colors">Visit Us</p>
-                  <p className="text-muted-foreground text-sm">WeWork Zenia, Hiranandani Business Park, Thane, Mumbai 400607</p>
-                </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
               </a>
             </div>
           </div>
