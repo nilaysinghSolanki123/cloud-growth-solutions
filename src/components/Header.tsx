@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Cloud } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import cloudgarageLogo from "@/assets/cloudgarage-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,14 +43,9 @@ const Header = () => {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex items-center gap-3 group"
+            className="flex items-center group"
           >
-            <div className="w-10 h-10 bg-primary flex items-center justify-center rounded-lg shadow-md group-hover:shadow-lg transition-shadow">
-              <Cloud className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold">
-              Cloud<span className="text-primary">Garage</span>
-            </span>
+            <img src={cloudgarageLogo} alt="CloudGarage" className="h-8 md:h-10" />
           </button>
 
           {/* Desktop Navigation */}

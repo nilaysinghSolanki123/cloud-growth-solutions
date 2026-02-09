@@ -1,4 +1,5 @@
-import { Cloud, Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail } from "lucide-react";
+import cloudgarageLogo from "@/assets/cloudgarage-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,11 +16,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary flex items-center justify-center rounded-lg">
-                <Cloud className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold">CloudGarage</span>
+            <div className="mb-6">
+              <img src={cloudgarageLogo} alt="CloudGarage" className="h-10" />
             </div>
             <p className="text-background/70 mb-6 max-w-md leading-relaxed">
               Your trusted Microsoft partner for Data and AI solutions. 
