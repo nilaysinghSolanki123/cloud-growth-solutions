@@ -1,8 +1,7 @@
-import React from "react";
 import { Linkedin, Twitter, Mail } from "lucide-react";
 import cloudgarageLogo from "@/assets/cloudgarage-logo.png";
 
-const Footer = React.forwardRef<HTMLElement>((_, forwardedRef) => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (sectionId: string) => {
@@ -102,8 +101,6 @@ const Footer = React.forwardRef<HTMLElement>((_, forwardedRef) => {
       </div>
     </footer>
   );
-});
-
-Footer.displayName = "Footer";
+};
 
 export default Footer;

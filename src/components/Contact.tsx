@@ -1,11 +1,10 @@
-import React from "react";
 import { Mail, Send, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const Contact = React.forwardRef<HTMLElement>((_, forwardedRef) => {
+const Contact = () => {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
 
   return (
@@ -104,8 +103,6 @@ const Contact = React.forwardRef<HTMLElement>((_, forwardedRef) => {
       </div>
     </section>
   );
-});
-
-Contact.displayName = "Contact";
+};
 
 export default Contact;
