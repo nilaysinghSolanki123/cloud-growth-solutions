@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import cloudgarageLogo from "@/assets/cloudgarage-logo.png";
 
 const Footer = () => {
@@ -61,18 +61,13 @@ const Footer = () => {
             <h4 className="font-bold mb-6 text-lg">Connect</h4>
             <div className="flex gap-3 mb-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/cloudgarage-in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 border border-background/20 flex items-center justify-center rounded-lg hover:bg-primary hover:border-primary transition-colors group"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5 text-background/70 group-hover:text-primary-foreground" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 border border-background/20 flex items-center justify-center rounded-lg hover:bg-primary hover:border-primary transition-colors group"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5 text-background/70 group-hover:text-primary-foreground" />
               </a>
               <a
                 href="mailto:ceo@cloudgarage.in"
