@@ -1,5 +1,5 @@
-import { useEffect, useState, useCallback } from "react";
-import { useRive } from "@rive-app/react-canvas";
+import { useEffect, useState, useCallback, useRef } from "react";
+import { useRive, EventType } from "@rive-app/react-canvas";
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -7,32 +7,36 @@ interface SplashScreenProps {
 
 const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   const [fadeOut, setFadeOut] = useState(false);
+  const completed = useRef(false);
+
+  const handleComplete = useCallback(() => {
+    if (completed.current) return;
+    completed.current = true;
+    setFadeOut(true);
+    setTimeout(onComplete, 500);
+  }, [onComplete]);
 
   const { RiveComponent, rive } = useRive({
     src: "/cg-intro.riv",
     animations: ["one shot"],
     autoplay: true,
     onLoadError: () => {
-      // If animation fails to load, skip to landing page
-      onComplete();
+      handleComplete();
     },
   });
 
-  const handleComplete = useCallback(() => {
-    setFadeOut(true);
-    setTimeout(onComplete, 500);
-  }, [onComplete]);
-
   useEffect(() => {
     if (rive) {
-      // Listen for animation stop
-      rive.on("stop" as any, handleComplete);
+      rive.on(EventType.Stop, handleComplete);
+      return () => {
+        rive.off(EventType.Stop, handleComplete);
+      };
     }
   }, [rive, handleComplete]);
 
-  // Fallback timeout - skip after 6 seconds regardless
+  // Fallback timeout - skip after 15 seconds if animation hasn't finished
   useEffect(() => {
-    const timeout = setTimeout(handleComplete, 6000);
+    const timeout = setTimeout(handleComplete, 15000);
     return () => clearTimeout(timeout);
   }, [handleComplete]);
 
