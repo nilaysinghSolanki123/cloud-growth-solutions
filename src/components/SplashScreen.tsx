@@ -56,17 +56,17 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   // Ultimate fallback: skip after 20 seconds
   useEffect(() => {
-    const timeout = setTimeout(handleComplete, 20000);
+    const timeout = setTimeout(handleComplete, 6000);
     return () => clearTimeout(timeout);
   }, [handleComplete]);
 
   return (
     <div
-      className={`fixed inset-0 z-50 bg-background flex items-center justify-center transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 bg-white flex items-center justify-center transition-opacity duration-500 ${
         fadeOut ? "opacity-0" : "opacity-100"
       }`}
     >
-      <div className="w-full h-full max-w-2xl max-h-96">
+      <div className="w-full h-full max-w-4xl max-h-[32rem]">
         <RiveComponent />
       </div>
       <button
