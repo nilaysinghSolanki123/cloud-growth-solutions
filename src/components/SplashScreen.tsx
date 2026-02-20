@@ -10,6 +10,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
   const { RiveComponent, rive } = useRive({
     src: "/cg-intro.riv",
+    animations: ["one shot"],
     autoplay: true,
     onLoadError: () => {
       // If animation fails to load, skip to landing page
